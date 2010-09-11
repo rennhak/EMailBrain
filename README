@@ -1,3 +1,23 @@
+EMailBrain
+----------
+
+Originally EMailBrain was intended only as a filtering (display_filter) help for mutt. This changed
+into being a fully usable tool to not only filter emails and cut them similar to t-prot but also to
+provide ways to cut out certain parts and rearrange certain information from mailinglist emails.
+Furthermore it is capable of analysing a mail according to a email hook and to construct a possible
+answer draft email.
 
 
-(C) 2009, Bjoern Rennhak, under an MIT licence. http://www.opensource.org/licenses/mit-license.php
+Development
+-----------
+
+1.) Readme Driven Development   
+2.) Behavior Driven Development (Ruby Cucumber)
+3.) Test Driven Development     (RSpec)
+4.) Coverage Tests              (Coverage)
+
+
+License
+-------
+
+(C) 2010, Bjoern Rennhak
