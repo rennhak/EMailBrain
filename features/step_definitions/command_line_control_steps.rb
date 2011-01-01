@@ -17,7 +17,8 @@ When /^I execute the program$/ do
 end
 
 Then /^I should see in the first line "([^\"]*)"$/ do |arg1|
-  raise Exception, "The -h and --help switch need to return a specific first line containing usage" unless( @short.first.chomp.strip == arg1.strip )
+  first_line = @short.split( "\n" ).first.gsub( "lib", "." ) # needs to be executed from project base dir NOT lib dir; rake cucumber
+  raise Exception, "The -h and --help switch need to return a specific first line containing usage" unless( first_line == arg1.strip )
 end
 
 

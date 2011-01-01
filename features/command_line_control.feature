@@ -9,6 +9,6 @@ Feature: Command line control
     Given I am executing the program on the command line
     And I provide the '-h' or '--help' switch as a command line argument
     When I execute the program
-    Then I should see in the first line "Usage: Brain.rb [options]"
+    Then I should see in the first line "Usage: ./Brain.rb [options]"
 
 
