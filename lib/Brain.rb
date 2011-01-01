@@ -1,4 +1,4 @@
-#!/usr/bin/ruby19
+#!/usr/bin/ruby
 
 
 ####
@@ -9,8 +9,10 @@
 # The idea of EMailBrain is to be a substitute for display filters used by mutt.
 # Display filters are for instances programs like t-prot or mutt-display-filter [1].
 #
-#
 # [1] http://aperiodic.net/phil/configs/bin/mutt-display-filter
+#
+#
+# (c) 2010-2011, Bjoern Rennhak
 #
 ###########
 

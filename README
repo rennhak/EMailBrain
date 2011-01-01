@@ -11,7 +11,7 @@ answer draft email.
 Development
 -----------
 
-1.) Readme Driven Development   
+1.) Readme Driven Development
 2.) Behavior Driven Development (Ruby Cucumber)
 3.) Test Driven Development     (RSpec)
 4.) Coverage Tests              (Coverage)
@@ -20,4 +20,4 @@ Development
 License
 -------
 
-(C) 2010, Bjoern Rennhak
+(C) 2010-2011, Bjoern Rennhak
