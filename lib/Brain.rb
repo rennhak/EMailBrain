@@ -29,6 +29,7 @@ class Brain # {{{
     unless( options.nil? )
       assert( "Options instance variable cannot be nil" ) { @options.nil? == false }
 
+
     end
   end # of def initialize }}}
 
@@ -42,7 +43,7 @@ class Brain # {{{
   # 
   # Credit: I saw the idea here http://snippets.dzone.com/posts/show/925
   def assert *message # {{{
-    raise "Assertion failed --> #{message}" unless yield if @options.debug
+    raise ArgumentError, "Assertion failed --> #{message}" unless yield if @options.debug
   end # of def assert }}}
 
 
@@ -187,6 +188,8 @@ class Brain # {{{
 #  def output content = @output # {{{
 #    STDOUT.puts content
 #  end # of def output }}}
+
+  attr :options
 
 end # of class Brain }}}
 
