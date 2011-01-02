@@ -12,9 +12,10 @@ Development
 -----------
 
 1.) Readme Driven Development
-2.) Behavior Driven Development (Ruby Cucumber)
-3.) Test Driven Development     (RSpec)
-4.) Coverage Tests              (Coverage)
+2.) Inline assertions for input/output function evaluation
+3.) Behavior Driven Development (Ruby Cucumber)
+4.) Test Driven Development     (RSpec)
+5.) Coverage Tests              (Coverage)
 
 
 License
