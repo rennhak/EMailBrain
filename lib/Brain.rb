@@ -21,14 +21,29 @@
 require 'optparse'
 require 'ostruct'
 
-
 class Brain # {{{
 
   def initialize options = nil # {{{
     @options = options
 
+    unless( options.nil? )
+      assert( "Options instance variable cannot be nil" ) { @options.nil? == false }
+
+    end
   end # of def initialize }}}
 
+
+  # = The function assert is just a simple implementation of assert in the Brain ObjectSpace
+  #   It is mostly used for input and output validation of functions arguments and returns.
+  #   Overhead of this function is exactly one function call, one if statement and one ostruct call
+  #   If this is too sensitive please override the assert function.
+  #
+  # Code: assert( "message" ) { boolean statement }
+  # 
+  # Credit: I saw the idea here http://snippets.dzone.com/posts/show/925
+  def assert *message # {{{
+    raise "Assertion failed --> #{message}" unless yield if @options.debug
+  end # of def assert }}}
 
   # = The function 'parse_cmd_arguments' takes a number of arbitrary commandline arguments and parses them into a proper data structure via optparse
   # @param args Ruby's STDIN.ARGS from commandline
@@ -36,6 +51,7 @@ class Brain # {{{
   def parse_cmd_arguments( args ) # {{{
 
     options               = OpenStruct.new
+    options.debug         = false
 
     # Define default options
 
@@ -46,6 +62,10 @@ class Brain # {{{
 
       opts.separator ""
       opts.separator "General options:"
+
+      opts.on("-d", "--debug", "Run assertions and show debug output") do |d|
+        options.debug = d
+      end
 
       opts.on_tail( "-h", "--help", "Show this message") do
         puts opts
@@ -61,11 +81,11 @@ class Brain # {{{
 
     opts.parse!(args)
 
-    # Show opts if we have no cmd arguments
-    if( options == pristine_options )
-      puts opts
-      exit
-    end
+    ## Show opts if we have no cmd arguments
+    #if( options == pristine_options )
+    #  puts opts
+    #  exit
+    #end
 
     options
   end # of parse_cmd_arguments }}}
